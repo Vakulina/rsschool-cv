@@ -1,11 +1,22 @@
+@keyframes changeBackground {
+ 0% {background-color:none; }
+  60% {background-color: aqua;}
+  100% {background-color:none;
+  }
+}
 body {
   margin: 0;
   box-sizing: border-box;
   font-size: 18px;
   line-height: 1.3;
+  scroll-behavior: smooth;
 }
 .container {
   width: 100%;
+}
+.active-section{
+  animation: changeBackground 1600ms ease-in;
+  transition: all 2s ease-in;
 }
 .page{
   box-sizing: border-box;
