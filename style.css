@@ -343,7 +343,7 @@ pre {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 300;
     padding-top: 0;
     height: 50px;
     width: 100%;
