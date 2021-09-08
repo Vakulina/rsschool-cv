@@ -236,6 +236,7 @@ height: 70px;
   box-sizing: border-box;
 min-height: 309px;
   background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   width: 95%;
   margin: 20px auto 0 auto;
@@ -295,6 +296,7 @@ pre {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  z-index: 100;
 }
 
 .ico-arrow_left {
@@ -314,7 +316,7 @@ pre {
 }
 .arrow{
   background-color: transparent;
-
+  z-index: 200;
   border: none;
 }
 @media (max-width: 750px) {
