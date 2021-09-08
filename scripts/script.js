@@ -1,32 +1,56 @@
-const myProgect = [
-  {
-    linkImg: '../images/project_team.jpg',
-    title: 'Team project "Куда поехать"',
-    paragraf: 'I made up html layouts of site using BEM, adapted the header for mobile devices and implemented, designed the function of opening form and made a drop-down menu on CSS.',
-    linkProject: 'https://vakulina.github.io/first-team-project/index.html'
-  },
-  
-  {
-    linkImg: '../images/project_travel.jpg',
-    title: 'Study project of Yandex Practicum "Russian-travel" (CSS + HTML)',
-    paragraf: `I learned how to make up according to the layout from Figma.
-    I practiced using GRID and Flex-box to create a rubber layout.
-    I adapted the site to common types of devices using media queries.`,
-    linkProject: 'https://vakulina.github.io/russian-travel/index.html'
-  },  
-  {
-    linkImg: '../images/project_mesto.jpg',
-    title: 'Study project of Yandex Practicum "Mesto Russia" (CSS + HTML + JS)',
-    paragraf: `I made an adaptive website using GRID and Flex-box.
-    I learned how to find elements in a document, add and remove classes, read field values, overwrite the text content of elements with DOM elements using JavaScript.
-    I learned how to create, add and delete elements in the DOM using the template element.`,
-    linkProject: 'https://vakulina.github.io/mesto/'
-  }, 
-   {
-    linkImg: '../images/project_museum.jpg',
-    title: 'Study project of RSS School as part of the course stage 0 "Museum"',
-    paragraf: 'I made a pixel perfect version of a large landing page for the Louvre.',
-    linkProject: 'https://rolling-scopes-school.github.io/vakulina-JSFEPRESCHOOL/museum/'
-  },
-]
-  
+const links = document.querySelectorAll('.header__link');
+const anchors = document.querySelectorAll('section[id]');
+const closeNav = document.querySelector('.nav__toggle');
+const buttonLeft =document.querySelector('.arrow_left');
+const buttonRight =document.querySelector('.arrow_right');
+let curruntIndex = 1;
+
+function highlight(arr) {
+  arr.forEach((element,index) => {
+    element.onclick = function() {
+     anchors[index].classList.add('active-section');
+     setTimeout( function() { anchors[index].classList.remove('active-section');}, 1600);
+    }
+  })
+}
+highlight(links);
+links.forEach(element => {
+  element.addEventListener('click', function () {
+  closeNav.checked = false;
+
+})
+});
+
+
+const templateSlide = document.getElementById('place-card').content;
+
+
+
+function printSlide(a) {
+  const activeSlide = templateSlide.cloneNode(true);
+  activeSlide.querySelector('.study-projects__link').href = a.linkProject;
+  activeSlide.querySelector('.study-projects__link').style.backgroundImage = `url(${a.linkImg})`;
+  activeSlide.querySelector('.study-projects__title').textContent = a.title;
+  activeSlide.querySelector('.study-projects__paragraf').textContent =a.paragraf;
+  document.querySelector('.study-projects__link').replaceWith(activeSlide);
+}
+function changeCurrentSlide(n) {
+	curruntIndex = (n + myProgect.length) % myProgect.length;
+}
+
+printSlide(myProgect[curruntIndex]);
+
+
+buttonLeft.addEventListener('click', function () {
+  curruntIndex --;
+ 
+  changeCurrentSlide(curruntIndex);
+  printSlide(myProgect[curruntIndex]);
+});
+buttonRight.addEventListener('click', function () {
+  curruntIndex ++;
+
+  changeCurrentSlide(curruntIndex);
+  printSlide(myProgect[curruntIndex]);
+});
+
