@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <link href='./highlight/gradient-dark.min.css' rel='stylesheet'/>
-  <script defer src="./scripts/script.js"></script>
   <script defer src="./scripts/projects.js"></script>
+  <script defer src="./scripts/script.js"></script>
+
   <title>CV</title>
 </head>
 <body class="container">
@@ -117,13 +118,18 @@
 
       <section class="study-projects">
         <h2 class="code-example__title">Study projects</h2>
-        <div class="study-projects__item">
-          <h3 class="study-projects__title">Team project "Куда поехать"</h3>
-          <p class="study-projects__paragraf">I made up html layouts of site using BEM,
-             adapted the header for mobile devices and implemented, designed the function of opening form and made
-              a drop-down menu on CSS.</p>
-          <a class="study-project__link">https://vakulina.github.io/first-team-project/index.html</a>
-        </div>
+ 
+
+
+          <a class="study-projects__link" href="https://vakulina.github.io/first-team-project/index.html" target="_blank">
+
+                          </a>
+
+    
+        <div class='buttons'>
+        <button class="arrow arrow_left "><img class="ico-arrow_left " src="./images/arrow.svg"></button>
+        <button class="arrow arrow_right"><img class="ico-arrow_right" src="./images/arrow.svg"></button>
+      </div>
       </section>
     
 
@@ -179,13 +185,15 @@ Little function on JS</pre>
   </main>
   </div>
 <template id="place-card">
-  <div class="study-projects__item">
-    <h3 class="study-projects__title">Team project "Куда поехать"</h3>
-    <p class="study-projects__paragraf">I made up html layouts of site using BEM,
-       adapted the header for mobile devices and implemented, designed the function of opening form and made
+  
+  <a class="study-projects__link" href="https://vakulina.github.io/first-team-project/index.html" target="_blank">
+    <div class="study-project__item">
+      <h3 class="study-projects__title">Team project "Куда поехать"</h3>
+      <p class="study-projects__paragraf">I made up html layouts of site using BEM,
+        adapted the header for mobile devices and implemented, designed the function of opening form and made
         a drop-down menu on CSS.</p>
-    <a class="study-project__link">https://vakulina.github.io/first-team-project/index.html</a>
-  </div>
+                    </div>
+                  </a>
 </template>
 
 <script src='./scripts/highlight/highlight.js'/></script>
