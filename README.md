@@ -1,1 +1,1 @@
-[my CV.md] (https://vakulina.github.io/rsschool-cv/cv)
+[my CV.md] (https://vakulina.github.io/rsschool-cv/index.html)
