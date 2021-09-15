@@ -5,6 +5,23 @@ const buttonLeft =document.querySelector('.arrow_left');
 const buttonRight =document.querySelector('.arrow_right');
 let curruntIndex = 1;
 
+var once = false;
+const changeCollage=()=>{
+  if ((!once)&&(window.screen.width<=770)) {
+    console.log('dsdf');
+      printSlideMob();
+      once=true;
+  }
+}
+
+
+ 
+  window.addEventListener('touchstart', changeCollage );
+
+
+
+
+
 function highlight(arr) {
   arr.forEach((element,index) => {
     element.onclick = function() {
@@ -23,7 +40,8 @@ links.forEach(element => {
 
 
 const templateSlide = document.getElementById('place-card').content;
-
+const mobileCollage= document.getElementById('place-card_mob').content;
+const popupTemplate =document.getElementById('image-popup_mob').content;
 
 
 function printSlide(a) {
@@ -34,6 +52,31 @@ function printSlide(a) {
   activeSlide.querySelector('.study-projects__paragraf').textContent =a.paragraf;
   document.querySelector('.study-projects__link').replaceWith(activeSlide);
 }
+
+
+const openPopup = (a)=> {
+  const popup = popupTemplate.cloneNode(true);
+  popup.querySelector('.popup-paragraf').href = a.linkProject;
+  popup.querySelector('.popup-img').style.backgroundImage = `url(${a.linkImg})`;
+  popup.querySelector('.popup-paragraf').textContent =`Открыть проект:  ${a.title}`;
+  document.querySelector('.study-project__main-screen_mob').replaceWith(popup);
+  popup.addEventListener()
+
+}
+
+function printSlideMob() {
+  const activeSlide = mobileCollage.cloneNode(true);
+  document.querySelector( '.buttons').remove();
+  document.querySelector('.study-projects__link').replaceWith(activeSlide);
+  const collage= document.querySelector('.study-project__main-screen_mob');
+  collage.addEventListener('click', () =>{
+    openPopup(myProgect[curruntIndex]);
+  });
+}
+
+
+
+
 function changeCurrentSlide(n) {
 	curruntIndex = (n + myProgect.length) % myProgect.length;
 }
@@ -53,4 +96,7 @@ buttonRight.addEventListener('click', function () {
   changeCurrentSlide(curruntIndex);
   printSlide(myProgect[curruntIndex]);
 });
+if (once) {
+  
+}
 
