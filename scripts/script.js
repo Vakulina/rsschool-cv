@@ -91,7 +91,7 @@ const swipedetect = () => {
 	let startTime = 0;
 	let elapsedTime = 0;
 
-	let threshold = 50;
+	let threshold = 80;
 	let restraint = 100;
 	let allowedTime = 300;
 
@@ -103,8 +103,6 @@ const swipedetect = () => {
 		startY = e.changedTouches[e.changedTouches.length-1].pageY;
 		startTime = new Date().getTime();
 		e.preventDefault();
-    console.log(e);
-    console.log(startX , startY, startTime);
 	}}, false);
 
 	el.addEventListener('touchend', function(e){
@@ -112,7 +110,6 @@ const swipedetect = () => {
 		distX = e.changedTouches[e.changedTouches.length-1].pageX - startX;
 		distY = e.changedTouches[e.changedTouches.length-1].pageY - startY;
 		elapsedTime = new Date().getTime() - startTime;
-    console.log(distX, distY, elapsedTime);
 		if (elapsedTime <= allowedTime){
 			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
 				if ((distX > 0)) {
