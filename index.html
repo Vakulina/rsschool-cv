@@ -20,7 +20,7 @@
       <nav class="nav">
         <input class="nav__toggle" id="nav__toggle" type="checkbox">
         <label class="nav__burger" for="nav__toggle">
-          <div class="nav__burger-icon"></div>
+          <span class="nav__burger-icon"></span>
         </label>
         <ul class="header__list">
           <li class="header__item"><a class="header__link" href="#contacts">Contacts</a></li>
@@ -121,13 +121,13 @@
 
           <section class="study-projects">
             <h2 class="code-example__title">Study projects</h2>
-            <div class="study-projects__link" href="" target="_blank">
+            <a class="study-projects__link" href="" target="_blank">
 
-            </div>
+            </a>
 
             <div class='buttons'>
-              <button class="arrow arrow_left"><img class="ico-arrow_left " src="./images/arrow.svg"></button>
-              <button class="arrow arrow_right"><img class="ico-arrow_right" src="./images/arrow.svg"></button>
+              <button class="arrow arrow_left"><img class="ico-arrow_left " src="./images/arrow.svg" alt=""></button>
+              <button class="arrow arrow_right"><img class="ico-arrow_right" src="./images/arrow.svg" alt=""></button>
             </div>
           </section>
 
@@ -164,26 +164,27 @@ Little function on JS</pre>
               <li class="summary__item">I like to see the finished result of my work on the screen.</li>
             </ul>
           </section>
-          <section class="video" id="video">
+          <article class="video" id="video">
             <h2 class="video__title">Video presentation</h2>
-            <iframe id="ytplayer" src="https://www.youtube.com/embed/nci3EZwwSt8?color=white" allowfullscreen> </iframe>
+            <iframe id="ytplayer" src="https://www.youtube.com/embed/6AqztJxJgbk" allowfullscreen> </iframe>
+          
+          </article>
         </div>
-        </section>
-      </div>
-      <footer class="footer">
-        <ul class="footer__links">
-          <li><a class="footer__link" href="https://rs.school/js/">
-              <div class="logo logo_rss"></div>
-            </a></li>
-          <li><a class="footer__link" href="https://github.com/Vakulina">
-              <div class="logo logo_githab"></div>
-            </a></li>
-        </ul>
-        <div class="footer__copyright">
-          <p class="footer__text">Viktoria Yakovleva</p>
-          <time datetime="2021-07-25">2021</time>
         </div>
-      </footer>
+        <footer class="footer">
+          <ul class="footer__links">
+            <li><a class="footer__link" href="https://rs.school/js/">
+                <div class="logo logo_rss"></div>
+              </a></li>
+            <li><a class="footer__link" href="https://github.com/Vakulina">
+                <div class="logo logo_githab"></div>
+              </a></li>
+          </ul>
+          <div class="footer__copyright">
+            <p class="footer__text">Viktoria Yakovleva</p>
+            <time datetime="2021-07-25">2021</time>
+          </div>
+        </footer>
     </main>
   </div>
   <template id="place-card">
@@ -196,24 +197,24 @@ Little function on JS</pre>
     </a>
   </template>
   <template id="place-card_mob">
-   
-    <img class="study-project__main-screen_mob" src="./images/collage.jpg">   
+
+    <img class="study-project__main-screen_mob" src="./images/collage.jpg">
   </template>
 
   <template id="image-popup_mob">
     <button class='button-back' id='button-back'><img class="image-popup__back" src='./images/back.svg'></button>
-  <div class="popup-container">
- 
-    <div class="popup-img">  </div>
-    <a class="popup-paragraf" href=""></a>
-  </div> 
+    <div class="popup-container">
+
+      <div class="popup-img"> </div>
+      <a class="popup-paragraf" href=""></a>
+    </div>
   </template>
 
-  <script src='./scripts/highlight/highlight.js' />
+  <script src='./scripts/highlight/highlight.js'>
   </script>
-  <script src='./scripts/highlight/javascript.min.js' />
+  <script src='./scripts/highlight/javascript.min.js'>
   </script>
-  <script type='text/javascript'>hljs.initHighlightingOnLoad();</script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>
