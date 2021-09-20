@@ -15,7 +15,9 @@ console.log(`
 14 есть ссылка на видео-резюме, но вместо видео есть только аудиоконтент +5
 15. дизайн, оформление, качество выполнения CV не ниже чем в примерах CV +10;
 Самоопроверка:155
-Итоговая самооценка: 150баллов`);
+Итоговая самооценка: 150баллов
+
+ссылка на пулреквест: https://github.com/Vakulina/rsschool-cv/pull/7`);
 
 const links = document.querySelectorAll('.header__link');
 const anchors = document.querySelectorAll('section[id]');
